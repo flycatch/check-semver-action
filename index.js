@@ -15,7 +15,7 @@ if (!semver.valid(prev_version)) {
     process.exit(1);
 }
 
-const next_version = core.getInput('branch-version');
+const next_version = core.getInput('next_version');
 if (!semver.valid(next_version)) {
     error(`New version (${red(next_version)}) is not a valid.`);
     process.exit(1);
@@ -43,5 +43,5 @@ if (single_inc && !validVersions.includes(next_version)) {
     process.exit(1);
 }
 
-info(`${green(next_version)} is valid.`);
+core.info(`${green(next_version)} is valid.`);
 process.exit(0);
