@@ -1,0 +1,17 @@
+name: 'Semver Check'
+description: Checks if semver is correct
+input:
+  prev_version:
+    description: Previous(base branch) version to check.
+    required: true
+  next_version:
+    description: Current(source branch) version to check
+    required: true
+  singleInc:
+    description: Only allow single increment of 1 for patch, minor, major versions
+    default: true
+    required: true
+
+runs:
+  using: 'node20'
+  main: index.js
